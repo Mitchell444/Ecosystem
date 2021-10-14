@@ -12,11 +12,18 @@ public void draw() {
   background(220);
   
 for (int i = 0; i < creatures.length; i++){
- creatures[i].show(); 
+ if(creatures[i].active){
+   creature.hp--;
+  creatures[i].show(); 
  creatures[i].move();
+ }
+ for (int j = 0; j < food.length; j++){
+ creatures[i].eat(food[j]);
+ }
 }
 for (int i = 0; i < food.length; i++){
- food[i].show();
+  if(food[i].active)
+  food[i].show();
  }
 }
 

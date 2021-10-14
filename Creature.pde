@@ -2,6 +2,7 @@ public class Creature {
   public PVector pos, vel;
   public int speed = 5;
   public float hp = 100.0;
+  public boolean active = true;
   public final int SIZE = 25;
   public final color COLOR = color(30,30,200);
   
@@ -34,6 +35,6 @@ public class Creature {
   }
   
   public void attack(Creature c) {
-    
+    if (
   }
 }

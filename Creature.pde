@@ -21,14 +21,16 @@ public class Creature {
   }
   
   public void eat(Food f) {
-    if(this.pos.x < f.pos.x + 10
-    && this.pos.x > f.pos.x
-    && this.pos.y < f.pos.y+10
-    && this.pos.y < f.pos.y){
+    if(this.pos.x <= f.pos.x +10
+    && this.pos.x >= f.pos.x
+    && this.pos.y <= f.pos.y + 10
+    && this.pos.y <= f.pos.y){
     f.health--;
-    }
-    if(f.health <= 0)
+    hp++;
+    
+    if(f.health == 0)
     f.active = false;
+    }
   }
   
   public void attack(Creature c) {

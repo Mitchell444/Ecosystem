@@ -1,6 +1,6 @@
 //1. spawn a bunch of creatures that move
 Creature[] creatures = new Creature[10];
-Food[] food = new Food[10];
+Food[] food = new Food[100];
 
 public void setup() {
   size(800,800);
@@ -13,17 +13,19 @@ public void draw() {
   
 for (int i = 0; i < creatures.length; i++){
  if(creatures[i].active){
-   creature.hp--;
-  creatures[i].show(); 
+ creatures[i].hp -=.2;
+ creatures[i].show(); 
  creatures[i].move();
+ creatures[i].loseHealth();
  }
  for (int j = 0; j < food.length; j++){
  creatures[i].eat(food[j]);
  }
 }
 for (int i = 0; i < food.length; i++){
-  if(food[i].active)
-  food[i].show();
+ if (food[i].active){
+ food[i].show();
+ }
  }
 }
 
